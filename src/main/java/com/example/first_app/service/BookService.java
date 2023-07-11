@@ -36,6 +36,7 @@ public class BookService implements BookServiceInter{
     public Books updateBook(Books books, int id){
         Books book = bookRespositry.findById(id).get();
         book.setBookName(books.getBookName());
+        book.setCost(books.getCost());
         return bookRespositry.save(book);
     }
 
