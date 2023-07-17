@@ -1,10 +1,7 @@
 package com.example.first_app.model;
 
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -13,7 +10,7 @@ import java.sql.Timestamp;
 @Data
 @ToString
 @FieldDefaults (level = AccessLevel.PRIVATE)
-public class Book {
+public class Books {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "BookId")
@@ -22,9 +19,9 @@ public class Book {
     @Column(name = "BookName")
     String bookName;
 
-    @Column(name = "Ttl")
-    Integer ttl;
-
     @Column(name = "TimeStamp")
-    Timestamp expiryTime;
+    Timestamp time;
+
+    @Column(name = "Cost")
+    long cost;
 }
